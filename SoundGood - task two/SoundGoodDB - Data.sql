@@ -1,3 +1,7 @@
+/***************************************just testing not the final file OKKKKKKKK****///////////////////////
+
+
+
 INSERT INTO person (person_number,first_name,last_name,phone_number,email,address_id)
 VALUES
   (197336129981,'Christian','Rowe','+46194161883','c_rowe@protonmail.org',5),

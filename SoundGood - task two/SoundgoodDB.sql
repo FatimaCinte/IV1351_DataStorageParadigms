@@ -58,7 +58,7 @@ CREATE TABLE "target_genre" (
 
 CREATE TABLE "room" (
   room_id SERIAL PRIMARY KEY,
-  room_number varchar(10) UNIQUE NOT NULL
+  room_name varchar(20) UNIQUE NOT NULL
 );
 
 CREATE TABLE "date" (

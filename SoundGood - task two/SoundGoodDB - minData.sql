@@ -1,3 +1,26 @@
+INSERT INTO address (street,zip,city)
+VALUES
+  ('394-9789 Magna Ave',11782,'Stockholm'),
+  ('3008 Mollis Road',15033,'Stockholm'),
+  ('233-465 In, Av.',10345,'Stockholm'),
+  ('635-955 Vestibulum Rd.',14972,'Stockholm'),
+  ('703-3302 Ullamcorper, Av.',14238,'Stockholm'),
+  ('P.O. Box 532, 3539 Lorem Rd.',12341,'Stockholm'),
+  ('Ap #366-5050 Class St.',12238,'Stockholm'),
+  ('Ap #437-7473 Cras Rd.',10390,'Stockholm'),
+  ('831 Ridiculus Road',15785,'Stockholm'),
+  ('Ap #114-8941 Mollis Avenue',15358,'Stockholm'),
+  ('Ap #269-8515 Phasellus St.',10955,'Stockholm'),
+  ('898-4497 Eu, Rd.',13513,'Stockholm'),
+  ('490-7152 Magna. St.',12533,'Stockholm'),
+  ('Ap #104-7717 Sociis Road',10464,'Stockholm'),
+  ('Ap #200-451 Nibh St.',15934,'Stockholm'),
+  ('997-9571 Facilisis Road',14305,'Stockholm'),
+  ('Ap #265-5416 A, St.',11006,'Stockholm'),
+  ('Ap #549-3512 Eu Rd.',13371,'Stockholm'),
+  ('751-3204 Nulla Av.',15914,'Stockholm'),
+  ('Ap #430-5481 Libero Street',11995,'Stockholm');
+
 INSERT INTO person (person_number,first_name,last_name,phone_number,email,address_id)
 VALUES
   (200512189821,'Emily','Head','+46242614672','emily_head@outlook.org',2),
@@ -23,28 +46,7 @@ VALUES
   (199002142367,'Ronan','Summers','+46011279678','summers_ronan@protonmail.se',15),
   (197306091234,'Jasper','Mccormick','+46297740626','j_mccormick5455@yahoo.edu',18);
 
-INSERT INTO address (street,zip,city)
-VALUES
-  ('394-9789 Magna Ave',11782,'Stockholm'),
-  ('3008 Mollis Road',15033,'Stockholm'),
-  ('233-465 In, Av.',10345,'Stockholm'),
-  ('635-955 Vestibulum Rd.',14972,'Stockholm'),
-  ('703-3302 Ullamcorper, Av.',14238,'Stockholm'),
-  ('P.O. Box 532, 3539 Lorem Rd.',12341,'Stockholm'),
-  ('Ap #366-5050 Class St.',12238,'Stockholm'),
-  ('Ap #437-7473 Cras Rd.',10390,'Stockholm'),
-  ('831 Ridiculus Road',15785,'Stockholm'),
-  ('Ap #114-8941 Mollis Avenue',15358,'Stockholm'),
-  ('Ap #269-8515 Phasellus St.',10955,'Stockholm'),
-  ('898-4497 Eu, Rd.',13513,'Stockholm'),
-  ('490-7152 Magna. St.',12533,'Stockholm'),
-  ('Ap #104-7717 Sociis Road',10464,'Stockholm'),
-  ('Ap #200-451 Nibh St.',15934,'Stockholm'),
-  ('997-9571 Facilisis Road',14305,'Stockholm'),
-  ('Ap #265-5416 A, St.',11006,'Stockholm'),
-  ('Ap #549-3512 Eu Rd.',13371,'Stockholm'),
-  ('751-3204 Nulla Av.',15914,'Stockholm'),
-  ('Ap #430-5481 Libero Street',11995,'Stockholm');
+
 
 INSERT INTO contact_person (person_id,relationship)
 VALUES
@@ -75,6 +77,13 @@ VALUES
   (19,TRUE),
   (20,TRUE);
 
+INSERT INTO instrument_type (name)
+VALUES
+  ('Piano'),
+  ('Guitar'),
+  ('Violin'),
+  ('Drums');
+
 
 INSERT INTO instrument (brand,instrument_type_id)
 VALUES
@@ -84,12 +93,6 @@ VALUES
   ('Pearl',4),
   ('Martin',1);
 
-INSERT INTO instrument_type (name)
-VALUES
-  ('Piano'),
-  ('Guitar'),
-  ('Violin'),
-  ('Drums');
 
 INSERT INTO instrument_for_rental (instrument_id,student_id,date_of_rental,date_to_return)
 VALUES

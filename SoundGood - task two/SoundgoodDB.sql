@@ -106,7 +106,7 @@ CREATE TABLE "lesson" (
   start varchar(10) NOT NULL,
   finish varchar(10) NOT NULL,
   instructor_id INT NOT NULL,
-  target_genre_id INT NOT NULL,
+  target_genre_id INT,
   room_id INT NOT NULL,
   date_id INT NOT NULL,
   skill_level_id INT NOT NULL,

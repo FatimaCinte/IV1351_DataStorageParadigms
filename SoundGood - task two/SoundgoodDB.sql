@@ -1,5 +1,13 @@
 /*  IV1351 Data Storage Paradigms, project - Fatima Mohammad Ali, Mehrdad Vafaee  */
 
+CREATE TABLE "address" (
+  address_id SERIAL PRIMARY KEY,
+  street varchar(100) NOT NULL,
+  zip varchar(5) NOT NULL,
+  city varchar(50) NOT NULL
+);
+
+
 CREATE TABLE "person" (
   person_id SERIAL PRIMARY KEY,
   person_number varchar(12) UNIQUE NOT NULL,
@@ -11,12 +19,6 @@ CREATE TABLE "person" (
   FOREIGN KEY(address_id) REFERENCES address(address_id) ON DELETE SET NULL
 );
 
-CREATE TABLE "address" (
-  address_id SERIAL PRIMARY KEY,
-  street varchar(100) NOT NULL,
-  zip varchar(5) NOT NULL,
-  city varchar(50) NOT NULL
-);
 
 CREATE TABLE "instructor" (
   instructor_id SERIAL PRIMARY KEY,

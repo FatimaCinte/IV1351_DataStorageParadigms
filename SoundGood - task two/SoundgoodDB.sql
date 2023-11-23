@@ -107,10 +107,12 @@ CREATE TABLE "lesson" (
   target_genre_id INT NOT NULL,
   room_id INT NOT NULL,
   date_id INT NOT NULL,
+  skill_level_id INT NOT NULL,
   FOREIGN KEY(instructor_id) REFERENCES instructor(instructor_id) ON DELETE SET NULL,
   FOREIGN KEY(target_genre_id) REFERENCES target_genre(target_genre_id) ON DELETE SET NULL,
   FOREIGN KEY(room_id) REFERENCES room(room_id) ON DELETE SET NULL,
-  FOREIGN KEY(date_id) REFERENCES date(date_id) ON DELETE SET NULL
+  FOREIGN KEY(date_id) REFERENCES date(date_id) ON DELETE SET NULL,
+  FOREIGN KEY(skill_level_id) REFERENCES skill_level(skill_level_id) ON DELETE SET NULL
 );
 
 CREATE TABLE "instrument" (

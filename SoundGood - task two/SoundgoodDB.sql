@@ -36,7 +36,7 @@ CREATE TABLE "student" (
   contact_person_id INT NOT NULL,
   sibling_id INT NOT NULL,
   FOREIGN KEY(person_id) REFERENCES person(person_id) ON DELETE CASCADE,
-  FOREIGN KEY(contact_person_id) REFERENCES contact_person(contact_person_id) ON DELETE SET NULL,
+  FOREIGN KEY(contact_person_id) REFERENCES contact_person(contact_person_id) ON DELETE SET NULL
 );
 
 

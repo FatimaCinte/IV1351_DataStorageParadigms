@@ -1,27 +1,27 @@
 INSERT INTO person (person_number,first_name,last_name,phone_number,email,address_id)
 VALUES
-  (197165231944,'Emily','Head','+46242614672','emily_head@outlook.org',2),
-  (201828547394,'Yuri','Hall','+46418249256','y.hall@google.se',2),
-  (201354343810,'Bethany','Saunders','+46944863461','saunders-bethany4794@protonmail.edu',6),
-  (201909145057,'Aladdin','Holland','+46325086767','a_holland@hotmail.edu',9),
-  (199365904348,'Simone','Rodriguez','+46716626201','s.rodriguez1581@aol.couk',5),
-  (201606366648,'Sarah','Hobbs','+46675634893','h-sarah@hotmail.ca',20),
-  (194982321108,'Melvin','Delacruz','+46706585842','melvin.delacruz@protonmail.ca',19),
-  (199911192884,'Daphne','Gates','+46038377496','gates_daphne7466@aol.ca',17),
-  (200601549247,'Dylan','Whitaker','+46935565252','d-whitaker1544@aol.org',17),
-  (201082081193,'Dacey','Lott','+46056448793','dacey.lott5362@aol.com',17),
+  (200512189821,'Emily','Head','+46242614672','emily_head@outlook.org',2),
+  (201803157634,'Yuri','Hall','+46418249256','y.hall@google.se',2),
+  (200201298745,'Bethany','Saunders','+46944863461','saunders-bethany4794@protonmail.edu',6),
+  (201512041023,'Aladdin','Holland','+46325086767','a_holland@hotmail.edu',9),
+  (200908302367,'Simone','Rodriguez','+46716626201','s.rodriguez1581@aol.couk',5),
+  (201109142567,'Sarah','Hobbs','+46675634893','h-sarah@hotmail.ca',20),
+  (200704267891,'Melvin','Delacruz','+46706585842','melvin.delacruz@protonmail.ca',19),
+  (201210183456,'Daphne','Gates','+46038377496','gates_daphne7466@aol.ca',17),
+  (200306091234,'Dylan','Whitaker','+46935565252','d-whitaker1544@aol.org',17),
+  (201909121998,'Dacey','Lott','+46056448793','dacey.lott5362@aol.com',17),
 
-  (197817817278,'Kimberley','Dale','+46875664494','k_dale@google.net',4),
-  (199692952552,'Charlotte','Gilmore','+46221917171','g_charlotte@outlook.se',8),
-  (199146201127,'Timon','Mills','+46341527160','millstimon@protonmail.ca',3),
-  (196036870674,'Hall','Cook','+46851764374','chall9264@hotmail.se',11),
-  (195532330100,'Inez','Schroeder','+46503756074','schroederinez@yahoo.se',1),
-  (199799038509,'Christen','Mills','+46565894182','m-christen@icloud.org',13),
-  (196074517071,'Sandra','Whitley','+46653335454','sandra.whitley991@google.se',14),
-  (197916388428,'Jason','Sweet','+46950661966','jsweet1704@aol.ca',17),
+  (197804152345,'Kimberley','Dale','+46875664494','k_dale@google.net',4),
+  (198512071234,'Charlotte','Gilmore','+46221917171','g_charlotte@outlook.se',8),
+  (196903281987,'Timon','Mills','+46341527160','millstimon@protonmail.ca',3),
+  (197211102345,'Hall','Cook','+46851764374','chall9264@hotmail.se',11),
+  (198709042367,'Inez','Schroeder','+46503756074','schroederinez@yahoo.se',1),
+  (195612301234,'Christen','Mills','+46565894182','m-christen@icloud.org',13),
+  (196510182567,'Sandra','Whitley','+46653335454','sandra.whitley991@google.se',14),
+  (198008092345,'Jasy','Sweet','+46950661966','jsweet1704@aol.ca',17),
 
-  (199015871505,'Ronan','Summers','+46011279678','summers_ronan@protonmail.se',15),
-  (197014230640,'Jasper','Mccormick','+46297740626','j_mccormick5455@yahoo.edu',18);
+  (199002142367,'Ronan','Summers','+46011279678','summers_ronan@protonmail.se',15),
+  (197306091234,'Jasper','Mccormick','+46297740626','j_mccormick5455@yahoo.edu',18);
 
 INSERT INTO address (street,zip,city)
 VALUES
@@ -130,28 +130,119 @@ VALUES ('100', '100', '150', '200', '150', '150', '50', '10', '60', '2023-11-12 
 
 INSERT INTO date (date)
 VALUES
-  ();
+('2023-02-10'),
+('2023-02-15'),
+('2023-02-17'),
+('2023-02-22'),
+('2023-02-24'),
+('2023-02-27'),
+('2023-03-01'),
+('2023-03-03');
 
 INSERT INTO instructor_date (instructor_id,date_id)
 VALUES
-  ();
+  (1,1),
+  (1,2),
+  (1,3),
+  (1,4),
+  (1,5),
+  (1,6),
+  (1,7),
+  (1,8),
+  (2,1),
+  (2,2),
+  (2,3),
+  (2,4);
 
-INSERT INTO lesson (min_nr_of_students, max_nr_of_students,time,instructor_id,target_genre_id,room_id)
+INSERT INTO lesson (min_nr_of_students, max_nr_of_students,date_id,start,finish,instructor_id,target_genre_id,room_id,skill_level_id)
 VALUES
-  (2,10,'2023-11-22 21:04',1,1,1);
+  (5,10,1,'10:00','12:00',1,1,1,1),
+  (1,1,1,'12:00','14:00',1,NULL,2,1),
+  (1, 1, 2, '09:00', '11:00', 1, NULL, 3,1),
+  (3, 6, 3, '13:00', '15:00', 1, NULL, 4,1),
+  (2, 6, 4, '08:30', '10:30', 1, 2, 3,3),
+  (1, 1, 5, '11:30', '13:30', 1, NULL, 2,2),
+  (1, 1, 6, '09:45', '11:45', 1, NULL, 3,1),
+  (2, 6, 6, '12:15', '14:15', 1, 2, 4, 2),
+  (1, 1, 1, '08:00', '10:00', 2, NULL, 1,1),
+  (2, 6, 2, '10:30', '12:30', 1, 1, 2,1),
+  (1, 1, 3, '11:00', '13:00', 2, NULL, 3,2),
+  (1, 3, 4, '13:30', '15:30', 2, NULL, 4,2);
 
 INSERT INTO student_instrument (student_id,skill_level_id,instrument_type_id)
 VALUES
-  ();
+  (1,1,1),
+  (1,1,2),
+  (2,1,2),
+  (3,1,3),
+  (3,1,2),
+  (4,1,4),
+  (5,2,1),
+  (5,2,2),
+  (6,2,2),
+  (6,1,4)
+  (7,3,3),
+  (8,2,4),
+  (8,2,2),
+  (9,2,1),
+  (9,3,2),
+  (9,3,3),
+  (10,2,2),
+  (10,3,3),
+  (10,3,4);
 
 INSERT INTO student_lesson (student_id,lesson_id)
 VALUES
-  ();
+  (1,2),
+  (2,3),
+  (3,4),
+  (1,4),
+  (2,4),
+  (9,5),
+  (10,5),
+  (7,5),
+  (5,6),
+  (4,7),
+  (5,8),
+  (6,8),
+  (8,8),
+  (6,9),
+  (1,10),
+  (2,10),
+  (3,10),
+  (4,10),
+  (6,10),
+  (9,11),
+  (10,12),
+  (9,12);
+
 
 INSERT INTO instructor_instrument (instructor_type_id,skill_level_id,instrument_type_id)
 VALUES
-  ();
+  (1,3,1),
+  (1,3,2),
+  (1,3,3),
+  (1,3,4),
+  (2,2,1),
+  (2,2,2);
 
-INSERT INTO lesson_instrument (instrument_type_id,lesson_id,skill_level_id)
+INSERT INTO lesson_instrument (instrument_type_id,lesson_id)
 VALUES
-  ();
+  (1,2),
+  (2,3),
+  (2,4),
+  (3,5),
+  (1,5),
+  (4,5),
+  (1,6),
+  (4,7),
+  (1,8),
+  (2,8),
+  (4,8),
+  (4,9),
+  (1,10),
+  (2,10),
+  (3,10),
+  (4,10),
+  (1,11),
+  (2,12);

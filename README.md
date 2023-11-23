@@ -1,3 +1,3 @@
 tbc
 
-Project by Fatima Mohammad Ali and Mehrdad Vafaee fall 2023.
+Project by Fatima Mohammad Ali and Mehrdad Vafaee, for IV1351 fall 2023.

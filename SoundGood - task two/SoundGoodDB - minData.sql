@@ -123,10 +123,9 @@ INSERT INTO rules(rental_limit, lease_period, time)
 VALUES ('2','12 months', '2023-11-22 21:04');
 
 INSERT INTO price_scheme(beginner_price, intermediate_price, advanced_price, individual_price, group_price, ensemble_price, instrument_rental, sibling_discount, instructor_salary_percentage, time)
-VALUES ('100', '100', '150', '200', '150', '150', '50', '10', '60', '2023-11-12 21:09');
-
-
-/****************kvar att fylla*****************/
+VALUES 
+  ('100', '100', '150', '200', '150', '150', '50', '11', '61', '2023-11-12 21:09'),
+  ('100', '100', '150', '200', '150', '150', '50', '10', '60', '2023-11-12 21:11');
 
 INSERT INTO date (date)
 VALUES

@@ -219,7 +219,7 @@ VALUES
   (9,12);
 
 
-INSERT INTO instructor_instrument (instructor_type_id,skill_level_id,instrument_type_id)
+INSERT INTO instructor_instrument (instructor_id,skill_level_id,instrument_type_id)
 VALUES
   (1,3,1),
   (1,3,2),

@@ -35,9 +35,10 @@ HAVING COUNT(*) > 2;
 
 SELECT 
 TO_CHAR(d.date, 'Day') AS "Day", 
-target_genre AS "Genre", 
+genre AS "Genre", 
 COUNT(*)
 FROM lesson l
-LEFT JOIN date d ON l.date_id = date_id
-WHERE target_genre_id IS NOT NULL
-GROUP BY TO_CHAR(d.date, 'Day'), target_genre;
+LEFT JOIN date d ON l.date_id = d.date_id
+LEFT JOIN target_genre t ON l.target_genre_id = t.target_genre_id
+WHERE t.target_genre_id IS NOT NULL
+GROUP BY TO_CHAR(d.date, 'Day'), genre;

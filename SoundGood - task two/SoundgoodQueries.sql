@@ -33,19 +33,20 @@ HAVING COUNT(*) > 2;
 
 /**Uppgift 4**/
 
-SELECT
+SELECT 
 TO_CHAR(d.date, 'Day') AS "Day", 
 genre AS "Genre", 
 CASE 
 WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) = 0 THEN 'No Seats'
 WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) > 0 AND CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) <= 2 THEN '1 or 2 Seats'
-WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) > 2 THEN 'Many Seats' 
+WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) > 2 THEN 'Many Seats'
+END
 FROM lesson l
 LEFT JOIN date d ON l.date_id = d.date_id
 LEFT JOIN target_genre t ON l.target_genre_id = t.target_genre_id
 LEFT JOIN student_lesson s ON l.lesson_id = s.lesson_id
 WHERE t.target_genre_id IS NOT NULL 
-AND EXTRACT(WEEK FROM d.date) = EXTRACT(WEEK FROM current_date) + 1 //DATE '2023-02-10'
-GROUP BY TO_CHAR(d.date, 'Day'), genre, EXTRACT(DAY FROM d.date), s.student_id 
+AND EXTRACT(WEEK FROM d.date) = EXTRACT(WEEK FROM current_date) + 1 /*DATE '2023-02-10', '2023-02-03'*/
+GROUP BY TO_CHAR(d.date, 'Day'), genre, EXTRACT(DAY FROM d.date), l.max_nr_of_students
 ORDER BY EXTRACT(DAY FROM d.date);
 

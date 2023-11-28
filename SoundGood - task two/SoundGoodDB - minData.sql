@@ -169,7 +169,11 @@ VALUES
   (1, 1, 1, '08:00', '10:00', 2, NULL, 1,1),
   (2, 6, 2, '10:30', '12:30', 1, 1, 2,1),
   (1, 1, 3, '11:00', '13:00', 2, NULL, 3,2),
-  (1, 3, 4, '13:30', '15:30', 2, NULL, 4,2);
+  (1, 3, 4, '13:30', '15:30', 2, NULL, 4,2)
+  (1, 1, 7, '13:30', '15:30', 2, NULL, 4,2),
+  (1, 1, 8, '08:30', '10:30', 1, NULL, 3,2)
+  (1,2,3,'10:00','12:00',2,5,2,1);
+
 
 INSERT INTO student_instrument (student_id,skill_level_id,instrument_type_id)
 VALUES
@@ -216,7 +220,9 @@ VALUES
   (6,10),
   (9,11),
   (10,12),
-  (9,12);
+  (9,12),
+  (3,15),
+  (4,15);
 
 
 INSERT INTO instructor_instrument (instructor_id,skill_level_id,instrument_type_id)

@@ -8,6 +8,15 @@ WHERE EXTRACT(YEAR FROM d.date) = 2023
 GROUP BY TO_CHAR(d.date,'Month')
 ORDER BY month;
 
+SELECT TO_CHAR(date.date, 'Month') AS "Month", 
+COUNT(*) AS "Total", 
+COUNT(*) filter (where max_nr_of_students = '1') AS "Individual",
+COUNT(*) filter (where max_nr_of_students > '1' AND target_genre_id IS NULL) AS "Group",
+COUNT(*) filter (where target_genre_id IS NOT NULL) AS "Ensemble"
+FROM lesson JOIN date ON lesson.date_id = date.date_id
+WHERE EXTRACT(YEAR FROM date.date) = 2023
+GROUP BY TO_CHAR(date.date, 'Month') 
+
 SELECT 
 instructor_id AS "Instructor ID", 
 first_name AS "First Name", 

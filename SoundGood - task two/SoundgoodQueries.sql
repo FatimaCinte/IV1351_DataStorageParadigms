@@ -19,13 +19,14 @@ WHERE EXTRACT(YEAR FROM date.date) = 2023
 GROUP BY TO_CHAR(date.date, 'Month') 
 
 /**Uppgift 3**/
+
 SELECT 
-instructor_id AS "Instructor ID", 
+i.instructor_id AS "Instructor ID", 
 first_name AS "First Name", 
 last_name AS "Last Name", 
 COUNT(*) AS "No of Lessons"
 FROM instructor i 
 LEFT JOIN person p ON i.person_id = p.person_id
 LEFT JOIN lesson l ON i.instructor_id = l.instructor_id
-GROUP BY instructor_id 
+GROUP BY i.instructor_id,first_name,last_name
 HAVING COUNT(*) > 2;

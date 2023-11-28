@@ -8,4 +8,13 @@ WHERE EXTRACT(YEAR FROM d.date) = 2023
 GROUP BY TO_CHAR(d.date,'Month')
 ORDER BY month;
 
-
+SELECT 
+instructor_id AS "Instructor ID", 
+first_name AS "First Name", 
+last_name AS "Last Name", 
+COUNT(*) AS "No of Lessons"
+FROM instructor i 
+LEFT JOIN person p ON i.person_id = p.person_id
+LEFT JOIN lesson l ON i.instructor_id = l.instructor_id
+GROUP BY instructor_id 
+HAVING COUNT(*) > 2;

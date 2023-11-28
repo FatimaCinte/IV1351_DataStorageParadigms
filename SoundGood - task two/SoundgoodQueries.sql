@@ -18,8 +18,25 @@ FROM lesson JOIN date ON lesson.date_id = date.date_id
 WHERE EXTRACT(YEAR FROM date.date) = 2023
 GROUP BY TO_CHAR(date.date, 'Month') 
 
-/**Uppgift 3**/
+/**2**/
+SELECT 
+    CASE 
+        WHEN sibling_count = 1 THEN '0'
+        WHEN sibling_count = 2 THEN '1'
+        WHEN sibling_count = 3 THEN '2'
+    END AS "No of Siblings",
+    SUM(counter.sibling_count) AS "No of Students"
+FROM (
+    SELECT COUNT(*) AS sibling_count
+    FROM student
+    GROUP BY sibling_id
+) AS counter
+/*WHERE counter.sibling_count = 4*/
 
+GROUP BY "No of Siblings"
+ORDER BY "No of Siblings";
+
+/**Uppgift 3**/
 SELECT 
 i.instructor_id AS "Instructor ID", 
 first_name AS "First Name", 

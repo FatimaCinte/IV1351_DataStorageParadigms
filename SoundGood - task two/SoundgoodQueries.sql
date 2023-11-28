@@ -30,3 +30,14 @@ LEFT JOIN person p ON i.person_id = p.person_id
 LEFT JOIN lesson l ON i.instructor_id = l.instructor_id
 GROUP BY i.instructor_id,first_name,last_name
 HAVING COUNT(*) > 2;
+
+/**Uppgift 4**/
+
+SELECT 
+TO_CHAR(d.date, 'Day') AS "Day", 
+target_genre AS "Genre", 
+COUNT(*)
+FROM lesson l
+LEFT JOIN date d ON l.date_id = date_id
+WHERE target_genre_id IS NOT NULL
+GROUP BY TO_CHAR(d.date, 'Day'), target_genre;

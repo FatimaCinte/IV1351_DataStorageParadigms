@@ -1,3 +1,4 @@
+/**Uppgift 1**/
 SELECT TO_CHAR(d.date, 'Month') AS month, 
 		COUNT(l.lesson_id) AS total,
 		COUNT(CASE WHEN l.max_nr_of_students = '1' THEN 1 END) AS indv,
@@ -17,6 +18,7 @@ FROM lesson JOIN date ON lesson.date_id = date.date_id
 WHERE EXTRACT(YEAR FROM date.date) = 2023
 GROUP BY TO_CHAR(date.date, 'Month') 
 
+/**Uppgift 3**/
 SELECT 
 instructor_id AS "Instructor ID", 
 first_name AS "First Name", 

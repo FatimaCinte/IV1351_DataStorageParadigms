@@ -66,3 +66,25 @@ WHERE t.target_genre_id IS NOT NULL
 AND EXTRACT(WEEK FROM d.date) = EXTRACT(WEEK FROM current_date) + 1 /*DATE '2023-02-10', '2023-02-03'*/
 GROUP BY TO_CHAR(d.date, 'Day'), genre, EXTRACT(DAY FROM d.date), l.max_nr_of_students
 ORDER BY EXTRACT(DAY FROM d.date);
+
+/**SoundgoodSelect**/
+SELECT DISTINCT
+l.lesson_id,
+CASE 
+WHEN max_nr_of_students = '1' THEN 'Individual'
+WHEN max_nr_of_students > '1' AND l.target_genre_id IS NULL THEN 'Group'
+WHEN l.target_genre_id IS NOT NULL THEN 'Ensemble' 
+END AS lesson_type,
+tg.genre AS genre,
+CASE
+WHEN max_nr_of_students = '1' THEN it.name
+WHEN max_nr_of_students > '1' AND l.target_genre_id IS NULL THEN it.name
+WHEN l.target_genre_id IS NOT NULL THEN '' 
+END AS instrument,
+sl.level AS skill_level
+FROM lesson l 
+LEFT JOIN target_genre tg ON l.target_genre_id = tg.target_genre_id
+LEFT JOIN lesson_instrument li ON l.lesson_id = li.lesson_id
+LEFT JOIN instrument_type it ON li.instrument_type_id = it.instrument_type_id
+LEFT JOIN skill_level sl ON l.skill_level_id = sl.skill_level_id
+ORDER BY l.lesson_id;

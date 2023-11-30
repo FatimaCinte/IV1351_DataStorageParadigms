@@ -16,7 +16,7 @@ COUNT(*) filter (where max_nr_of_students > '1' AND target_genre_id IS NULL) AS 
 COUNT(*) filter (where target_genre_id IS NOT NULL) AS "Ensemble"
 FROM lesson JOIN date ON lesson.date_id = date.date_id
 WHERE EXTRACT(YEAR FROM date.date) = 2023
-GROUP BY TO_CHAR(date.date, 'Month') 
+GROUP BY TO_CHAR(date.date, 'Month');
 
 /**2**/
 SELECT 

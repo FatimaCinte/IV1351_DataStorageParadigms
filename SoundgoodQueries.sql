@@ -69,6 +69,8 @@ ORDER BY EXTRACT(DAY FROM d.date);
 
 /**SoundgoodSelect**/
 SELECT DISTINCT
+CONCAT(p.first_name, ' ', p.last_name),
+p.email,
 l.lesson_id,
 CASE 
 WHEN max_nr_of_students = '1' THEN 'Individual'
@@ -80,11 +82,13 @@ CASE
 WHEN max_nr_of_students = '1' THEN it.name
 WHEN max_nr_of_students > '1' AND l.target_genre_id IS NULL THEN it.name
 WHEN l.target_genre_id IS NOT NULL THEN '' 
-END AS instrument,
-sl.level AS skill_level
+END AS instrument
 FROM lesson l 
 LEFT JOIN target_genre tg ON l.target_genre_id = tg.target_genre_id
 LEFT JOIN lesson_instrument li ON l.lesson_id = li.lesson_id
 LEFT JOIN instrument_type it ON li.instrument_type_id = it.instrument_type_id
 LEFT JOIN skill_level sl ON l.skill_level_id = sl.skill_level_id
+LEFT JOIN student_lesson stl ON l.lesson_id = stl.lesson_id
+LEFT JOIN student s ON stl.student_id = s.student_id 
+LEFT JOIN person p ON s.person_id = p.person_id
 ORDER BY l.lesson_id;

@@ -3,7 +3,7 @@ CREATE TABLE "lessons" (
     student_name varchar(100) NOT NULL,
     student_email varchar(100) NOT NULL,
     lesson_id INT NOT NULL,
-    lesson_type varchar(50) NOT NULL,
+    lesson_type text NOT NULL,
     genre varchar(50) UNIQUE,
     instrument varchar(50)
 );

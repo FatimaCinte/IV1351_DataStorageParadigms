@@ -1,3 +1,5 @@
+/*  IV1351 Data Storage Paradigms, project - Fatima Mohammad Ali, Mehrdad Vafaee  */
+
 INSERT INTO address (street,zip,city)
 VALUES
   ('394-9789 Magna Ave',11782,'Stockholm'),

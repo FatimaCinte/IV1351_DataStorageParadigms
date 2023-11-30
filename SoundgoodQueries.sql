@@ -1,4 +1,6 @@
-/**Uppgift 1**/
+/*  IV1351 Data Storage Paradigms, project - Fatima Mohammad Ali, Mehrdad Vafaee  */
+
+/**Query 1**/
 SELECT TO_CHAR(d.date, 'Month') AS month, 
 		COUNT(l.lesson_id) AS total,
 		COUNT(CASE WHEN l.max_nr_of_students = '1' THEN 1 END) AS indv,
@@ -18,7 +20,7 @@ FROM lesson JOIN date ON lesson.date_id = date.date_id
 WHERE EXTRACT(YEAR FROM date.date) = 2023
 GROUP BY TO_CHAR(date.date, 'Month');
 
-/**2**/
+/**Query 2**/
 SELECT 
     CASE 
         WHEN sibling_count = 1 THEN '0'
@@ -36,7 +38,7 @@ FROM (
 GROUP BY "No of Siblings"
 ORDER BY "No of Siblings";
 
-/**Uppgift 3**/
+/**Query 3**/
 SELECT 
 i.instructor_id AS "Instructor ID", 
 first_name AS "First Name", 
@@ -48,8 +50,7 @@ LEFT JOIN lesson l ON i.instructor_id = l.instructor_id
 GROUP BY i.instructor_id,first_name,last_name
 HAVING COUNT(*) > 2;
 
-/**Uppgift 4**/
-
+/**Query 4**/
 SELECT 
 TO_CHAR(d.date, 'Day') AS "Day", 
 genre AS "Genre", 
@@ -67,7 +68,7 @@ AND EXTRACT(WEEK FROM d.date) = EXTRACT(WEEK FROM current_date) + 1 /*DATE '2023
 GROUP BY TO_CHAR(d.date, 'Day'), genre, EXTRACT(DAY FROM d.date), l.max_nr_of_students
 ORDER BY EXTRACT(DAY FROM d.date);
 
-/**SoundgoodSelect**/
+/**For Historical - SoundgoodSelect**/
 SELECT DISTINCT
 CONCAT(p.first_name, ' ', p.last_name),
 p.email,

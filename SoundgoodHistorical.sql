@@ -5,10 +5,11 @@ CREATE TABLE "lessons" (
     lesson_id INT NOT NULL,
     lesson_type text NOT NULL,
     genre varchar(50) UNIQUE,
-    instrument varchar(50)
+    instrument varchar(50),
+    lesson_price varchar(15) NOT NULL /**type INT ?
 );
 
-INSERT INTO lessons (student_name,student_email,lesson_id,lesson_type,genre,instrument)
+INSERT INTO lessons (student_name,student_email,lesson_id,lesson_type,genre,instrument,lesson_price)
 VALUES
 
 ;

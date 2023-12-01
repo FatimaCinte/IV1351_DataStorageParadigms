@@ -168,5 +168,5 @@ CREATE TABLE "lesson_instrument"(
   lesson_id INT,
   PRIMARY KEY(instrument_type_id, lesson_id),
   FOREIGN KEY(instrument_type_id) REFERENCES instrument_type(instrument_type_id) ON DELETE CASCADE,
-  FOREIGN KEY(lesson_id) REFERENCES lesson(lesson_id) ON DELETE CASCADE,
+  FOREIGN KEY(lesson_id) REFERENCES lesson(lesson_id) ON DELETE CASCADE
 );

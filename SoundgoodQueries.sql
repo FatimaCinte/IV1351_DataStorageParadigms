@@ -83,7 +83,11 @@ CASE
 WHEN max_nr_of_students = '1' THEN it.name
 WHEN max_nr_of_students > '1' AND l.target_genre_id IS NULL THEN it.name
 WHEN l.target_genre_id IS NOT NULL THEN '' 
-END AS instrument
+END AS instrument,
+CASE 
+WHEN stl.rule_id IS NULL THEN ps.price
+WHEN stl.rule_id IS NOT NULL THEN ps.price * r.rule_value
+END AS lesson_price
 FROM lesson l 
 LEFT JOIN target_genre tg ON l.target_genre_id = tg.target_genre_id
 LEFT JOIN lesson_instrument li ON l.lesson_id = li.lesson_id
@@ -92,8 +96,7 @@ LEFT JOIN skill_level sl ON l.skill_level_id = sl.skill_level_id
 LEFT JOIN student_lesson stl ON l.lesson_id = stl.lesson_id
 LEFT JOIN student s ON stl.student_id = s.student_id 
 LEFT JOIN person p ON s.person_id = p.person_id
+LEFT JOIN price_scheme ps ON l.price_scheme_id = ps.price_scheme_id
+LEFT JOIN rule r ON stl.rule_id = r.rule_id
 ORDER BY l.lesson_id;
 
-SELECT COUNT(*)
-FROM student a, student b
-WHERE a.sibling_id = b.sibling_id;

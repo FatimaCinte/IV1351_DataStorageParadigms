@@ -74,10 +74,10 @@ VALUES
   (9,8,7),
   (10,8,7);
 
-INSERT INTO instructor (person_id,ensemble_qualified)
+INSERT INTO instructor (person_id,ensemble_qualified,rule_id)
 VALUES
-  (19,TRUE),
-  (20,TRUE);
+  (19,TRUE,4),
+  (20,TRUE,4);
 
 INSERT INTO instrument_type (name)
 VALUES
@@ -96,11 +96,11 @@ VALUES
   ('Martin',1);
 
 
-INSERT INTO instrument_for_rental (instrument_id,student_id,date_of_rental,date_to_return)
+INSERT INTO instrument_for_rental (instrument_id,student_id,date_of_rental,date_to_return,rule_id)
 VALUES
-  (1,1,'2022-10-20 08:04','2023-10-20 08:04'),
-  (3,1,'2022-11-22 21:04','2023-11-22 21:04'),
-  (4,6,'2022-12-22 14:04','2023-12-22 14:04');
+  (1,1,'2022-10-20 08:04','2023-10-20 08:04',3),
+  (3,1,'2022-11-22 21:04','2023-11-22 21:04',3),
+  (4,6,'2022-12-22 14:04','2023-12-22 14:04',3);
 
 INSERT INTO room (room_name)
 VALUES

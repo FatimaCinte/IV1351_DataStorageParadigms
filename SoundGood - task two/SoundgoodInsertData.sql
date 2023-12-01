@@ -124,8 +124,12 @@ VALUES
   ('intermediate'),
   ('advanced');
 
-INSERT INTO rules(rental_limit, lease_period, time) 
-VALUES ('2','12 months', '2023-11-22 21:04');
+INSERT INTO rule(rule_value, description) 
+VALUES 
+(10, 'sibling_discount'),
+(2, 'instrument_limit'),
+(12, 'lease_period'),
+(75, 'instructor_salaray_precentage');
 
 INSERT INTO price_scheme(beginner_price, intermediate_price, advanced_price, individual_price, group_price, ensemble_price, instrument_rental, sibling_discount, instructor_salary_percentage, time)
 VALUES 

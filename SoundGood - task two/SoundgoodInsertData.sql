@@ -49,6 +49,12 @@ VALUES
   (197306091234,'Jasper','Mccormick','+46297740626','j_mccormick5455@yahoo.edu',18);
 
 
+INSERT INTO rule(rule_value, description) 
+VALUES 
+(10, 'sibling_discount'),
+(2, 'instrument_limit'),
+(12, 'lease_period'),
+(75, 'instructor_salaray_precentage');
 
 INSERT INTO contact_person (person_id,relationship)
 VALUES
@@ -124,12 +130,6 @@ VALUES
   ('intermediate'),
   ('advanced');
 
-INSERT INTO rule(rule_value, description) 
-VALUES 
-(10, 'sibling_discount'),
-(2, 'instrument_limit'),
-(12, 'lease_period'),
-(75, 'instructor_salaray_precentage');
 
 INSERT INTO price_scheme(lesson_type,skill_level_id,price)
 VALUES 

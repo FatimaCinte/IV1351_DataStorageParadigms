@@ -70,9 +70,8 @@ ORDER BY EXTRACT(DAY FROM d.date);
 
 /**For Historical - SoundgoodSelect**/
 SELECT DISTINCT
-CONCAT(p.first_name, ' ', p.last_name),
+CONCAT(p.first_name, ' ', p.last_name) AS Name,
 p.email,
-l.lesson_id,
 CASE 
 WHEN max_nr_of_students = '1' THEN 'Individual'
 WHEN max_nr_of_students > '1' AND l.target_genre_id IS NULL THEN 'Group'
@@ -86,17 +85,15 @@ WHEN l.target_genre_id IS NOT NULL THEN ''
 END AS instrument,
 CASE 
 WHEN stl.rule_id IS NULL THEN ps.price
-WHEN stl.rule_id IS NOT NULL THEN ps.price * r.rule_value
+WHEN stl.rule_id IS NOT NULL THEN (ps.price * (100 - r.rule_value)) / 100
 END AS lesson_price
 FROM lesson l 
 LEFT JOIN target_genre tg ON l.target_genre_id = tg.target_genre_id
 LEFT JOIN lesson_instrument li ON l.lesson_id = li.lesson_id
 LEFT JOIN instrument_type it ON li.instrument_type_id = it.instrument_type_id
-LEFT JOIN skill_level sl ON l.skill_level_id = sl.skill_level_id
 LEFT JOIN student_lesson stl ON l.lesson_id = stl.lesson_id
 LEFT JOIN student s ON stl.student_id = s.student_id 
 LEFT JOIN person p ON s.person_id = p.person_id
 LEFT JOIN price_scheme ps ON l.price_scheme_id = ps.price_scheme_id
 LEFT JOIN rule r ON stl.rule_id = r.rule_id
-ORDER BY l.lesson_id;
-
+WHERE s.student_id IS NOT NULL

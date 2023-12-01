@@ -131,10 +131,17 @@ VALUES
 (12, 'lease_period'),
 (75, 'instructor_salaray_precentage');
 
-INSERT INTO price_scheme(beginner_price, intermediate_price, advanced_price, individual_price, group_price, ensemble_price, instrument_rental, sibling_discount, instructor_salary_percentage, time)
+INSERT INTO price_scheme(lesson_type,skill_level_id,price)
 VALUES 
-  ('100', '100', '150', '200', '150', '150', '50', '11', '61', '2023-11-12 21:09'),
-  ('100', '100', '150', '200', '150', '150', '50', '10', '60', '2023-11-12 21:11');
+  ('individual', 1, '200'),
+  ('individual', 2, '200'),
+  ('individual', 3, '210'),
+  ('group', 1, '250'),
+  ('group', 2, '250'),
+  ('group', 3, '260'),
+  ('ensemble', 1, '300'),
+  ('ensemble', 2, '300'),
+  ('ensemble', 3, '310');
 
 INSERT INTO date (date)
 VALUES
@@ -203,32 +210,32 @@ VALUES
   (10,3,3),
   (10,3,4);
 
-INSERT INTO student_lesson (student_id,lesson_id)
+INSERT INTO student_lesson (student_id,lesson_id, rule_id)
 VALUES
-  (1,2),
-  (2,3),
-  (3,4),
-  (1,4),
-  (2,4),
-  (9,5),
-  (10,5),
-  (7,5),
-  (5,6),
-  (4,7),
-  (5,8),
-  (6,8),
-  (8,8),
-  (6,9),
-  (1,10),
-  (2,10),
-  (3,10),
-  (4,10),
-  (6,10),
-  (9,11),
-  (10,12),
-  (9,12),
-  (3,15),
-  (4,15);
+  (1,2,1),
+  (2,3,1),
+  (3,4, NULL),
+  (1,4,1),
+  (2,4,1),
+  (9,5,1),
+  (10,5,1),
+  (7,5,NULL),
+  (5,6,NULL),
+  (4,7,NULL),
+  (5,8,NULL),
+  (6,8,NULL),
+  (8,8,1),
+  (6,9,NULL),
+  (1,10,1),
+  (2,10,1),
+  (3,10,NULL),
+  (4,10,NULL),
+  (6,10,NULL),
+  (9,11,1),
+  (10,12,1),
+  (9,12,1),
+  (3,15,NULL),
+  (4,15,NULL);
 
 
 INSERT INTO instructor_instrument (instructor_id,skill_level_id,instrument_type_id)

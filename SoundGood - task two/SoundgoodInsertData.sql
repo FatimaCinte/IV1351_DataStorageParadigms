@@ -85,13 +85,12 @@ VALUES
   (19,TRUE,4),
   (20,TRUE,4);
 
-INSERT INTO instrument_type (name)
+INSERT INTO instrument_type (name, instrument_rental_price)
 VALUES
-  ('Piano'),
-  ('Guitar'),
-  ('Violin'),
-  ('Drums');
-
+  ('Piano',1000),
+  ('Guitar',300),
+  ('Violin',800),
+  ('Drums',800);
 
 INSERT INTO instrument (brand,instrument_type_id)
 VALUES

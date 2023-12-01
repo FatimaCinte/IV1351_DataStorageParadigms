@@ -6,7 +6,7 @@ CREATE TABLE "lessons" (
     lesson_type text NOT NULL,
     genre varchar(50) UNIQUE,
     instrument varchar(50),
-    lesson_price varchar(15) NOT NULL /**type INT ?
+    lesson_price INT NOT NULL
 );
 
 INSERT INTO lessons (student_name,student_email,lesson_id,lesson_type,genre,instrument,lesson_price)

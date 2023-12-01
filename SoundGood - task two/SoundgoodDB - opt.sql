@@ -18,6 +18,12 @@ CREATE TABLE "person" (
   FOREIGN KEY(address_id) REFERENCES address(address_id) ON DELETE SET NULL
 );
 
+CREATE TABLE "rule"(
+  rule_id SERIAL PRIMARY KEY,
+  rule_value INT NOT NULL, 
+  description varchar(50) NOT NULL
+);
+
 CREATE TABLE "instructor" (
   instructor_id SERIAL PRIMARY KEY,
   person_id INT UNIQUE NOT NULL,
@@ -87,11 +93,6 @@ CREATE TABLE "price_scheme" (
   price INT NOT NULL
 );
 
-CREATE TABLE "rule"(
-  rule_id SERIAL PRIMARY KEY,
-  rule_value INT NOT NULL, 
-  description varchar(50) NOT NULL,
-);
 
 CREATE TABLE "lesson" (
   lesson_id SERIAL PRIMARY KEY,

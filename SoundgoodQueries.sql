@@ -93,3 +93,7 @@ LEFT JOIN student_lesson stl ON l.lesson_id = stl.lesson_id
 LEFT JOIN student s ON stl.student_id = s.student_id 
 LEFT JOIN person p ON s.person_id = p.person_id
 ORDER BY l.lesson_id;
+
+SELECT COUNT(*)
+FROM student a, student b
+WHERE a.sibling_id = b.sibling_id;

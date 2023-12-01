@@ -11,7 +11,6 @@ CREATE TABLE "lessons" (
 
 INSERT INTO lessons (student_name,student_email,lesson_id,lesson_type,genre,instrument,lesson_price)
 VALUES
-(' ', NULL, 1, 'Ensemble', 'Pop', ' ', 300),
 ('Emily Head', 'emily_head@outlook.org', 2, 'Individual', NULL, 'Piano', 180),
 ('Yuri Hall', 'y.hall@google.se', 3, 'Individual', NULL, 'Guitar', 180),
 ('Bethany Saunders', 'saunders-bethany4794@protonmail.edu', 4, 'Group', NULL, 'Guitar', 250),

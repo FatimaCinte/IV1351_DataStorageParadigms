@@ -55,10 +55,10 @@ SELECT
 TO_CHAR(d.date, 'Day') AS "Day", 
 genre AS "Genre", 
 CASE 
-WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) = 0 THEN 'No Seats'
-WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) > 0 AND CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) <= 2 THEN '1 or 2 Seats'
-WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) > 2 THEN 'Many Seats'
-END
+WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) = 0 THEN 'No seats'
+WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) > 0 AND CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) <= 2 THEN '1 or 2 seats'
+WHEN CAST(l.max_nr_of_students AS INTEGER) - COUNT(*) > 2 THEN 'Many seats'
+END AS "No of free seats"
 FROM lesson l
 LEFT JOIN date d ON l.date_id = d.date_id
 LEFT JOIN target_genre t ON l.target_genre_id = t.target_genre_id

@@ -96,4 +96,4 @@ LEFT JOIN student s ON stl.student_id = s.student_id
 LEFT JOIN person p ON s.person_id = p.person_id
 LEFT JOIN price_scheme ps ON l.price_scheme_id = ps.price_scheme_id
 LEFT JOIN rule r ON stl.rule_id = r.rule_id
-WHERE s.student_id IS NOT NULL
+WHERE s.student_id IS NOT NULL;

@@ -1,6 +1,7 @@
 /*  IV1351 Data Storage Paradigms, project - Fatima Mohammad Ali, Mehrdad Vafaee  */
 
-/**Query 1**/
+/**Query 1, two versions**/
+/**Version 1**/
 SELECT TO_CHAR(d.date, 'Month') AS "Month", 
 		COUNT(l.lesson_id) AS "Total",
 		COUNT(CASE WHEN l.max_nr_of_students = '1' THEN 1 END) AS "Individual",
@@ -11,6 +12,7 @@ WHERE EXTRACT(YEAR FROM d.date) = 2023
 GROUP BY TO_CHAR(d.date,'Month')
 ORDER BY "Month";
 
+/**Version 2**/
 SELECT TO_CHAR(date.date, 'Month') AS "Month", 
 COUNT(*) AS "Total", 
 COUNT(*) filter (where max_nr_of_students = '1') AS "Individual",

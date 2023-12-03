@@ -47,6 +47,8 @@ COUNT(*) AS "No of Lessons"
 FROM instructor i 
 LEFT JOIN person p ON i.person_id = p.person_id
 LEFT JOIN lesson l ON i.instructor_id = l.instructor_id
+LEFT JOIN date d ON l.date_id = d.date_id
+WHERE EXTRACT(MONTH FROM d.date) = EXTRACT(MONTH FROM current_date) /*DATE '2023-02-10'*/
 GROUP BY i.instructor_id,first_name,last_name
 HAVING COUNT(*) > 2;
 

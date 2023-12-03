@@ -51,7 +51,7 @@ LEFT JOIN date d ON l.date_id = d.date_id
 WHERE EXTRACT(MONTH FROM d.date) = EXTRACT(MONTH FROM current_date) /*DATE '2023-02-10'*/
 GROUP BY i.instructor_id,first_name,last_name
 HAVING COUNT(*) > 2
-ORDER BY "No of Lessons";
+ORDER BY "No of Lessons" DESC;
 
 /**Query 4**/
 SELECT 
